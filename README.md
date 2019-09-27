@@ -8,8 +8,20 @@ O MemSQL é um banco de dados SQL distribuído e altamente escalável. Fornecemo
 
 ### Pesquisa textual
 O MemSQL possui uma pesquisa textual nativa, com operadores e curingas com performance considerável em milhões de registros textuais. Possui também a capacidade de pesquisa com regex com performance também considerável em volumes de milhões de registros.
-RLIKE: https://docs.memsql.com/sql-reference/v6.8/rlike_and_regexp/
-MATCH: https://docs.memsql.com/sql-reference/v6.8/match/
+<p>RLIKE: https://docs.memsql.com/sql-reference/v6.8/rlike_and_regexp/ 
+<p>MATCH: https://docs.memsql.com/sql-reference/v6.8/match/ 
 
 ### Pesquisa textual avançada
-Um conceito de pesquisa por proximidade dos termos pesquisados e outros operadores para refinamento de pesquisa. ... em edição
+Um conceito de pesquisa por proximidade dos termos pesquisados e outros operadores para refinamento de pesquisa. Permite o uso de dicionário de sinônimos em qualquer língua, inclusive o uso de fonética.
+
+#### Conectores
+<ul>
+  <li> OU E NÃO </li>
+  <li> ADJ </li>
+  <li> ADJC </li>
+  <li> PROX </li>
+  <li> PROXC </li>
+  <li> COM </li>
+  <li> MESMO </li>  
+</ul>
+... em edição
