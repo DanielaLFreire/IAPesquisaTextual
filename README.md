@@ -11,3 +11,5 @@ O MemSQL possui uma pesquisa textual nativa, com operadores e curingas com perfo
 RLIKE: https://docs.memsql.com/sql-reference/v6.8/rlike_and_regexp/
 MATCH: https://docs.memsql.com/sql-reference/v6.8/match/
 
+### Pesquisa textual avançada
+Um conceito de pesquisa por proximidade dos termos pesquisados e outros operadores para refinamento de pesquisa. ... em edição
