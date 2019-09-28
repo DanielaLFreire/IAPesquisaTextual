@@ -1,4 +1,5 @@
-# EM EDIÇÃO 
+#### EM EDIÇÃO 
+<p></p>
 
 # Pesquisa Textual
 Pesquisa textual implementada com recursos nativos do banco de dados MemSQL com o uso de dicionário de sinônimos, fonética e aproximações. É uma pesquisa que tenta ir além do que pesquisas comuns fazem, pois não tem o objetivo de trazer grandes volumes de resultados, mas resultados o mais próximo possível do desejado.
@@ -57,5 +58,10 @@ Somando-se essa pesquisa refinada ao poder de busca vetorial do MemSQL, podemos 
     <li>https://www.escavador.com/sobre/277362353/amilar-domingos-moreira-martins</li>
     <li>https://www.escavador.com/sobre/1453629/gilmar-ferreira-mendes</li>
 </ul>
+<p>O trabalho do me Amilar permite identificar peças processuais que tratam de temas semelhantes, mesmo que escrito de formas diferentes e com termos diferentes. A similaridade textual é obtida ao treinar modelos matemáticos com o uso de IA, modelo não supervisionado. O modelo foi treinado com mais de 300 mil documentos jurídicos do contexto específico do projeto, permitindo que termos próprios do vocabulário jurídico não sejam confundidos com seus significados do senso comum. 
+<p>Um dos "segredos" para o sucesso do treinamento é o pré-processamento dos documentos treinados. Com o modelo pronto, novos documentos são pré-processados com o mesmo algoritmo e vetorizados pelo modelo. Os vetores podem ser armazenados em qualquer repositório para comparação futura.
+<p>O poder de pesquisa vetorial do <b>MemSQL</b> entra aqui. Armazenando os vetores no MemSQL, junto com outros metadados das peças processuais, por exemplo, pode-se encontrar outras peças processuais semelhantes refinando a pesquisa com metadados (ano, relator, ramo do direito etc), obtendo-se o resultado em segundos ou fraçoes de segundos.
+<p>A proposta da <b>pesquisa textual avançada<b> é permitir somar a esse poder de busca vetorial, ou até ser usado de forma independente, uma pesquisa textual com critérios flexíveis e robustos que permitam um resultado rápido e preciso.
 
-... em edição
+<p><p>
+####... em edição
