@@ -13,24 +13,21 @@ O MemSQL é um banco de dados SQL distribuído e altamente escalável, prometend
 O MemSQL possui uma pesquisa textual nativa, com operadores e curingas com performance considerável em milhões de registros textuais. Possui também a capacidade de pesquisa com regex com performance também considerável em volumes de milhões de registros. <b>Apesar</b> dessa capacidade de pesquisa, que assemelha-se ao <b>ElasticSearch</b> em alguns casos, ele não permite filtros mais refinados nos seus critérios de pesquisa nativos. 
 <p>RLIKE: https://docs.memsql.com/sql-reference/v6.8/rlike_and_regexp/ 
 <p>MATCH: https://docs.memsql.com/sql-reference/v6.8/match/ 
+</p>
+
 #### Cursos oficiais disponíveis
 <ul><li>https://training.memsql.com/</li></ul>
 
 ### Pesquisa textual avançada
-Implementei aqui um conceito de pesquisa por proximidade dos termos e outros operadores para refinamento de pesquisa. Esse tipo de operador torna-se importante para refinar pesquisas em grande volume de dados, onde não é iportante trazer muito resultado, mas um resultado o mais próximo possível do que é procurado. Ferramentas comuns de busca como <b>ElasticSearch</b> e o próprio <b>MemSQL</b> não trazem nativamente esse tipo de operador. 
+Implementei aqui um conceito de pesquisa por proximidade dos termos e outros operadores para refinamento de pesquisa. Esse tipo de operador torna-se importante para refinar pesquisas em grande volume de dados, onde não é importante trazer muito resultado, mas um resultado o mais próximo possível do que é procurado. Ferramentas comuns de busca como <b>ElasticSearch</b> e o próprio <b>MemSQL</b> não trazem nativamente esse tipo de operador. Essa ideia não é nova, conheci ao logos dos últimos 20 anos vários sistemas que faziam algo parecido. Não há pretenção em competir com qualquer um desses produtos, mas ter algo simples e operacional para quem tiver interesse em personalizar uma busca textual da forma que precisar. 
 <p> Esse tipo de pesquisa permite o uso de dicionário de sinônimos em qualquer língua, inclusive o uso de fonética. Para evitar não encontrar termos com grafia incorreta de acentos ou termos no singular/plural, bem como números com pontuação ou sem, o texto de entrada é pré-processado. Por padrão o texto é pesquisado no singular, removendo pronomes oblíquos, mas é possível localizar o termo real usando aspas (exceto acentos que sempre são desconsiderados).
+<p> A pesquisa também permite localizar termos pelo dicionário de sinônimos. Ao pesquisar a palavra "genitor", o sistema pesquisa também "pai". A tabela de sinônimos é flexível e facilmente atualizável, permitindo incluir termos em outras línguas se desejado. O uso de sinônimos pode ser ativado ou desativado a cada pesquisa. Ao pesquisar termos entre aspas, o sinônimo é desativado para o termo ou conjunto de termos entre aspas enquanto os outros termos podem ser pesquisados com o uso dos sinônimos.
+
 <p> O pré-processamento envolve:
 <ul>
   <li> retirada de <b>acentos</b> </li>
   <li> <b>singularização</b> rápida: não é um porquguês perfeito, mas uma singularização para a máquina localizar textos </li>
-  <li> remoção de <b>pronomes oblíquos</b>: o pré-processamento transforma "fazer-lhe-ia" em "fazer", mas a pesquisa entre aspas pode localizar o termo real "fazer-lhe-ia"</li>
-</ul>
-
-<p> A pesquisa permite localizar termos pelo dicionário de sinônimos. Ao pesquisar a palavra "genitor", o sistema pesquisa também "pai". A tabela de sinônimos é flexível, permitindo incluir termos em outras línguas se desejado. O uso de sinônimos pode ser ativado ou desativado a cada pesquisa. Ao pesquisar termos entre aspas, o sinônimo é desativado para o termo ou conjunto de termos entre aspas.
-<ul>
-  <li> retirada de <b>acentos</b> </li>
-  <li> <b>singularização</b> rápida: não é um porquguês perfeito, mas uma singularização para a máquina localizar textos </li>
-  <li> remoção de <b>pronomes oblíquos</b>: o pré-processamento transforma "fazer-lhe-ia" em "fazer", mas a pesquisa entre aspas pode localizar o termo real "fazer-lhe-ia"</li>
+  <li> remoção de <b>pronomes oblíquos</b>: o pré-processamento transforma "contar-lhe-ia" em "contar", mas a pesquisa entre aspas pode localizar o termo real "contar-lhe-ia"</li>
 </ul>
 
 #### Conectores
@@ -48,8 +45,8 @@ Implementei aqui um conceito de pesquisa por proximidade dos termos e outros ope
 </ul>
 
 ### Similaridade semântica
-Somando-se essa pesquisa refinada ao poder de busca vetorial do MemSQL, podemos ter um sistema de pesquisa avançado que consegue pesquisar em poucos segundos textos semelhantes a um texto paradigma ou textos que contenham determinados critérios refinados. Bem como unir a pesquisa vetorial à pesquisa textual acançada. É uma ferramenta poderosa para busca em documentos acadêmicos, jurídicos etc.
-<p>A pesquisa vetorial é nativa do MemSQL, sendo necessário apenas treinar ou usar um modelo já treinado para vetorizar textos. Isso pode ser feito de forma relativamente simples usando frameworks como o DOC2VEC do Gensim. A busca vetorial do MemSQL promete, e cumpre, a comparação vetorial em um volume considerável de dados (dezenas de milhões de vetores) em segundos ou até frações de segundos.
+Somando-se essa pesquisa ao poder de busca vetorial do MemSQL, podemos ter um sistema de pesquisa avançado que consegue pesquisar em poucos segundos textos semelhantes a um texto paradigma ou textos que contenham determinados critérios refinados. Bem como unir a pesquisa vetorial à pesquisa textual acançada. É uma ferramenta poderosa para busca em documentos acadêmicos, jurídicos etc.
+<p>A pesquisa vetorial é nativa do MemSQL, sendo necessário apenas treinar ou usar um modelo já treinado para vetorizar textos (também aplicável a imagens ou outras fontes). Isso pode ser feito de forma relativamente simples usando frameworks como o DOC2VEC do Gensim. A busca vetorial do MemSQL promete, e cumpre, a comparação vetorial em um volume considerável de dados (dezenas de milhões de vetores) em segundos ou até frações de segundos.
 <p> Em breve será disponibilizado o código com o passo-a-passo de como treinar um modelo para vetorizar textos para pesquisa semântica.
 <p> Um exemplo de pesquisa acadêmica, com aplicação prática imediata, usando vetorização de documentos jurídicos:
   <ul>
@@ -60,10 +57,11 @@ Somando-se essa pesquisa refinada ao poder de busca vetorial do MemSQL, podemos 
     <li>https://www.escavador.com/sobre/277362353/amilar-domingos-moreira-martins</li>
     <li>https://www.escavador.com/sobre/1453629/gilmar-ferreira-mendes</li>
 </ul>
-<p>O trabalho do me Amilar permite identificar peças processuais que tratam de temas semelhantes, mesmo que escrito de formas diferentes e com termos diferentes. A similaridade textual é obtida ao treinar modelos matemáticos com o uso de IA, modelo não supervisionado. O modelo foi treinado com mais de 300 mil documentos jurídicos do contexto específico do projeto, permitindo que termos próprios do vocabulário jurídico não sejam confundidos com seus significados do senso comum. 
+<p>O trabalho do me Amilar permite identificar peças processuais que tratam de temas semelhantes, mesmo que escrito de formas diferentes e com termos diferentes. A similaridade textual é obtida ao treinar modelos matemáticos com o uso de IA, treinamento não supervisionado. O modelo foi treinado com mais de 300 mil documentos jurídicos do contexto específico do projeto, permitindo que termos próprios do vocabulário jurídico não sejam confundidos com seus significados do senso comum. 
 <p>Um dos "segredos" para o sucesso do treinamento é o pré-processamento dos documentos treinados. Com o modelo pronto, novos documentos são pré-processados com o mesmo algoritmo e vetorizados pelo modelo. Os vetores podem ser armazenados em qualquer repositório para comparação futura.
 <p>O poder de pesquisa vetorial do <b>MemSQL</b> entra aqui. Armazenando os vetores no MemSQL, junto com outros metadados das peças processuais, por exemplo, pode-se encontrar outras peças processuais semelhantes refinando a pesquisa com metadados (ano, relator, ramo do direito etc), obtendo-se o resultado em segundos ou fraçoes de segundos.
 <p>A proposta da <b>pesquisa textual avançada<b> é permitir somar a esse poder de busca vetorial, ou até ser usado de forma independente, uma pesquisa textual com critérios flexíveis e robustos que permitam um resultado rápido e preciso.
-
+<p>Para ilustrar a facilidade do uso do MemSQL na pesquisa vetorial, tem-se o sql abaixo que procura entre milhares de documentos aqueles que estão a uma distância vetorial 0.95 do vetor paradigma. Isso pode ser traduzido grosseiramente em documentos 95% semelhantes ao documento paradigma.
+  <ul><li>Select * from base.vetores where DOT_PRODUCT(<b>meu_vetor</b>,vetores.vetor)><b>0.95</b></li></ul>
 <p><p>
 ####... em edição
