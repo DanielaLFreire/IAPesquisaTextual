@@ -45,8 +45,17 @@ Implementei aqui um conceito de pesquisa por proximidade dos termos e outros ope
 </ul>
 
 ### Similaridade semântica
-Somando-se essa pesquisa refinada ao poder de busca vetorial do MemSQL, podemos ter um sistema de pesquisa avançado que consegue pesquisar em poucos segundos textos semelhantes a um texto paradigma ou textos que contenham determinados critérios refinados. Bem como unir a pesquisa vetorial à pesquisa textual acançada.
+Somando-se essa pesquisa refinada ao poder de busca vetorial do MemSQL, podemos ter um sistema de pesquisa avançado que consegue pesquisar em poucos segundos textos semelhantes a um texto paradigma ou textos que contenham determinados critérios refinados. Bem como unir a pesquisa vetorial à pesquisa textual acançada. É uma ferramenta poderosa para busca em documentos acadêmicos, jurídicos etc.
 <p>A pesquisa vetorial é nativa do MemSQL, sendo necessário apenas treinar ou usar um modelo já treinado para vetorizar textos. Isso pode ser feito de forma relativamente simples usando frameworks como o DOC2VEC do Gensim. A busca vetorial do MemSQL promete, e cumpre, a comparação vetorial em um volume considerável de dados (dezenas de milhões de vetores) em segundos ou até frações de segundos.
-
+<p> Em breve será disponibilizado o código com o passo-a-passo de como treinar um modelo para vetorizar textos para pesquisa semântica.
+<p> Um exemplo de pesquisa acadêmica, com aplicação prática imediata, usando vetorização de documentos jurídicos:
+  <ul>
+    <li><b>Autor</b>: <b>me Amilar Domingos Moreira Martins </b> - (Mestrado Profissional em Administração Pública)</li>
+    <li><b>Título</b>: Agrupamento Automático de Documentos Jurídicos com uso de Inteligência Artificial</li>
+    <li><b>Ano de Obtenção</b>: 2018</li>
+    <li><b>Orientador</b>: Min. Gilmar Ferreira Mendes</li>
+    <li>https://www.escavador.com/sobre/277362353/amilar-domingos-moreira-martins</li>
+    <li>https://www.escavador.com/sobre/1453629/gilmar-ferreira-mendes</li>
+</ul>
 
 ... em edição
