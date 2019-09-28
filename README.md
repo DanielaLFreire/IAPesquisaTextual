@@ -2,7 +2,7 @@
 <p></p>
 
 # Combinando Pesquisa Textual e IA
-## busca semântica e textual em documentos
+## Busca semântica e textual em documentos
 Pesquisa textual implementada com recursos nativos do banco de dados MemSQL com o uso de dicionário de sinônimos, fonética e distâmcia entre termos pesquisados. É uma pesquisa que tenta ir além do que pesquisas comuns fazem, pois não tem o objetivo de trazer grandes volumes de resultados, mas resultados precisos. Estão incluídos nesse projeto todos os códigos necessários para usar o banco de dados <b>MemSQL</b> como repositório de textos, vetores e as as rotinas de indexação e pesquisa textual.
 <p>Estão disponíveis também os códigos python necessários para treinamento e vetorização dos documentos, o que permite ir além da busca textual, realizando uma busca semântica no texto. São aplicações simples e práticas de algoritmos de Inteligência Artificial/Machine Learning com o uso de softwares <b>open source</b> e o banco de dados <b>MemSQL</b> disponível na versão cummunit e enterprise.
 
