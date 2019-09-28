@@ -73,5 +73,6 @@ Somando-se essa pesquisa textual ao poder de busca vetorial do MemSQL, podemos t
 <p>A proposta da <b>pesquisa textual avançada</b> é permitir somar a esse poder de busca vetorial, ou até ser usado de forma independente, uma pesquisa textual com critérios flexíveis e robustos que permitam um resultado rápido e preciso.
 <p>Para ilustrar a facilidade do uso do MemSQL na pesquisa vetorial, tem-se o sql abaixo que procura entre milhares de documentos aqueles que estão a uma distância vetorial 0.05 do vetor paradigma. Isso pode ser traduzido grosseiramente em documentos 95% semelhantes ao documento paradigma.
   <ul><li>Select * from base.vetores where DOT_PRODUCT(<b>meu_vetor</b>,vetores.vetor)>=<b>0.95</b></li></ul>
-<p><p>
+
+
 ####... em edição
