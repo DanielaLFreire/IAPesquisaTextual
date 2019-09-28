@@ -31,7 +31,8 @@ Implementei aqui um operador de pesquisa por proximidade dos termos e outros ope
   <li> remoção de <b>pronomes oblíquos</b>: o pré-processamento transforma "contar-lhe-ia" em "contar", mas a pesquisa entre aspas pode localizar o termo real "contar-lhe-ia"</li>
 </ul>
 
-#### Conectores
+#### Conectores ou operadores de pesquisa
+Conectores ou operadores de pesquisa são termos com utilizados em sistemas de pesquisa para indicar a relação desejada entre os termos pesquisados. Por exemplo, se é desejado encontrar documentos com a palavra <i>casa</i> e a palavra <i>papel</i>, pode-se escrever o critério de pesquisa como <b>casa papel</b> ou pode-se escrever <b>casa E papel</b>. O operador <b>E</b> está subentendido quando nenhum operador é informado. Para usar termos que são iguais aos operadores, é necessário colocar o termo entre aspas. Ex.: <b>amor e ódio</b> deveria ser escrito como <b>amor "e" ódio</b> para garantir que os três termos existem no texto. Ou também <b>"amor e ódio"</b> para que os termos sejam exigidos nessa sequência, um seguido do outro.  
 <ul>
   <li> <b>E</b>: conector padrão, exige a existência do termo no documento</li>
   <li> <b>NÃO</b>: nega a existência de um termo no documento </li>
