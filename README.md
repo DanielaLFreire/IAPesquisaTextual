@@ -1,4 +1,4 @@
-#### EM EDIÇÃO 
+#### PROJETO EM EDIÇÃO 
 <p></p>
 
 # Combinando Pesquisa Textual e IA
