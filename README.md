@@ -37,7 +37,7 @@ Implementei aqui um operador de pesquisa por proximidade dos termos e outros ope
 <p> O pré-processamento envolve:
 <ul>
   <li> retirada de <b>acentos</b> </li>
-  <li> redução a um <b>pseudoossingular</b> ou <b>singular estimado</b>: não é um português perfeito, mas uma singularização para a máquina localizar termos com maior flexibilidade</li>
+  <li> redução a um <b>pseudosingular</b> ou <b>singular estimado</b>: não é um português perfeito, mas uma singularização para a máquina localizar termos com maior flexibilidade</li>
   <li> remoção de <b>pronomes oblíquos</b>: o pré-processamento transforma "contar-lhe-ia" em "contar", mas a pesquisa entre aspas pode localizar o termo real "contar-lhe-ia"</li>
 </ul>
 
