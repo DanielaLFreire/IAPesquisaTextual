@@ -3,8 +3,17 @@
 
 # Combinando Pesquisa Textual e IA
 ## Busca semântica e textual em documentos
-Essa é uma proposta de pesquisa textual implementada com recursos nativos do banco de dados MemSQL com o uso de dicionário de sinônimos, fonética e distância entre termos pesquisados. É uma pesquisa que tenta ir além do que pesquisas comuns fazem, pois não tem o objetivo de trazer grandes volumes de resultados, mas resultados precisos. Estão incluídos nesse projeto todos os códigos necessários para usar o banco de dados <b>MemSQL</b> como repositório de textos, vetores e as as rotinas de indexação e pesquisa textual.
-<p>Estão disponíveis também os códigos python necessários para treinamento e vetorização dos documentos, o que permite ir além da busca textual, realizando uma busca semântica no texto. São aplicações simples e práticas de algoritmos de Inteligência Artificial/Machine Learning com o uso de softwares <b>open source</b> e o banco de dados <b>MemSQL</b> disponível na versão community e enterprise.
+Essa é uma proposta de pesquisa textual implementada com recursos nativos do banco de dados MemSQL com o uso de dicionário de sinônimos, fonética e distância entre termos pesquisados. É uma pesquisa que tenta ir além do que pesquisas comuns fazem, pois não tem o objetivo de trazer grandes volumes de resultados, mas resultados precisos. 
+
+#### em breve...
+<p>Estarão disponíveis nesse repositório:</p>
+<ul>
+  <li>Scripts em python necessários para treinamento e vetorização dos documentos, o que permite ir além da busca textual, realizando uma busca semântica nos textos.</li>
+  <li>Procedures e funções criadas para o <b>MemSQL</b>: responsáveis pelo pré-processamento dos textos para armazenamento no formato compatível com a pesquisa textual; funções responsáveis pela análise dos critérios de pesquisa; funções para identificação dos pesos dos termos (tfidf) em cada documento; e funções e procedures acessórias.
+  <li>Scripts opcionais em python para inclusão de grandes volumes de dados na base</li>
+</ul>
+<p>São aplicações simples e práticas de algoritmos de Inteligência Artificial/Machine Learning com o uso de softwares <b>open source</b> e o banco de dados <b>MemSQL</b> disponível na versão community e enterprise.
+<p>Para integrar a ferramenta de pesquisa textual a aplicações web ou cliente-servidor é necessário apenas o uso de um cliente <b>MySQL</b>. Para a vetorização de textos para busca semântica é necessário rodar os scripts <b>Python</b> com um modelo treinado a fim de vetorizar novos documentos inseridos na base.</p>
 
 ### MemSQL
 O MemSQL é um SGBD compatível com o padrão ANSI-SQL, distribuído e altamente escalável, prometendo desempenho máximo para cargas de trabalho transacionais e analíticas de bigdata, usando modelos de dados bem conhecidos. Suporta metadados JSON, comparação de vetores multidimensionais e análise de grandes volumes de dados. Está disponível em https://www.memsql.com, pode ser usado na versão Community ou com suporte pago. Para facilitar o uso desse banco de dados, o acesso é feito por meio de conectores compatíveis com MySQL, apesar do banco de dados não ter qualquer relação de desenvolvimento com o MySQL, como explica o fabricante. 
