@@ -3,7 +3,7 @@
 
 # Combinando Pesquisa Textual e IA
 ## Busca semântica e textual em documentos
-Essa é uma proposta de pesquisa textual implementada com recursos nativos do banco de dados MemSQL com o uso de dicionário de sinônimos, fonética e distância entre termos pesquisados. É uma pesquisa que tenta ir além do que pesquisas comuns fazem, pois não tem o objetivo de trazer grandes volumes de resultados, mas resultados precisos. 
+Essa é uma proposta de pesquisa textual implementada com recursos nativos do banco de dados MemSQL com o uso de dicionário de sinônimos, recursos fonéticos e distância entre termos pesquisados. É uma pesquisa que tenta ir além do que pesquisas comuns fazem, pois não tem o objetivo de trazer grandes volumes de resultados, mas resultados precisos. 
 
 #### em breve...
 <p>Estarão disponíveis nesse repositório:</p>
