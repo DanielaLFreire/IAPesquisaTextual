@@ -18,6 +18,7 @@ Essa é uma proposta de pesquisa textual implementada com recursos nativos do ba
 ### MemSQL
 O MemSQL é um SGBD compatível com o padrão ANSI-SQL, distribuído e altamente escalável, prometendo desempenho máximo para cargas de trabalho transacionais e analíticas de bigdata, usando modelos de dados bem conhecidos. Suporta metadados JSON, comparação de vetores multidimensionais e análise de grandes volumes de dados. Está disponível em https://www.memsql.com, pode ser usado na versão Community ou com suporte pago. Para facilitar o uso desse banco de dados, o acesso é feito por meio de conectores compatíveis com MySQL, apesar do banco de dados não ter qualquer relação de desenvolvimento com o MySQL, como explica o fabricante. 
 <p>É possível comparar o MemSQL com outros SGDBs no link: https://db-engines.com/en/system/MemSQL
+<p>Análise e benchmarking das soluções NewSQL CockroachDB, MemSQL, NuoDB e VoltDB: https://repositorio.ufsc.br/handle/123456789/192162?show=full</p>
 
 ### Pesquisa textual padrão do MemSQL
 O MemSQL possui uma pesquisa textual nativa, com operadores e curingas com performance considerável em milhões de registros textuais. Possui também a capacidade de pesquisa com Expressões Regulares (RegEx) com performance também considerável em volumes de milhões de registros. <b>Apesar</b> dessa capacidade de pesquisa, que assemelha-se ao <b>ElasticSearch</b> em alguns casos, ele não permite filtros mais refinados nos seus critérios de pesquisa nativos. 
