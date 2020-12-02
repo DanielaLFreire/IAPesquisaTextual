@@ -70,7 +70,8 @@ Somando-se essa pesquisa textual ao poder de busca vetorial do MemSQL, podemos t
     <li><b>Autor</b>: <b>Me Amilar Domingos Moreira Martins </b> - (Mestrado Profissional em Administração Pública)</li>
     <li><b>Título</b>: Agrupamento Automático de Documentos Jurídicos com uso de Inteligência Artificial</li>
     <li><b>Ano de Obtenção</b>: 2018</li>
-    <li>http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8073990E8</li>
+    <li><b>Lattes</b>:http://lattes.cnpq.br/4525063654737953</li>
+    <li><b>Dissertação</b>:https://repositorio.idp.edu.br/handle/123456789/2635</li>
     <li><b>Aplicação do trabalho</b>: em uso no Superior Tribunal de Justiça</li>
 </ul>
 <p>O experimento do Me Amilar permite identificar peças processuais que tratam de temas semelhantes, mesmo que escrito de formas diferentes e com termos diferentes. A similaridade textual é obtida ao treinar modelos matemáticos com o uso de IA, treinamento não supervisionado. O modelo foi treinado com mais de 300 mil documentos jurídicos do contexto específico do projeto, permitindo que termos próprios do vocabulário jurídico não sejam confundidos com seus significados do senso comum. 
