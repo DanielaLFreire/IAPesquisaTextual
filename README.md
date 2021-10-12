@@ -1,14 +1,17 @@
 #### PROJETO EM ANDAMENTO ... ⏳
-<p></p>
 
 # Combinando Pesquisa Textual e IA
 ## Busca semântica e textual em documentos
 Essa é uma proposta de pesquisa textual implementada com recursos nativos do banco de dados MemSQL com o uso de dicionário de sinônimos, recursos fonéticos e distância entre termos pesquisados. É uma pesquisa que tenta ir além do que pesquisas comuns fazem, pois não tem o objetivo de trazer grandes volumes de resultados, mas resultados precisos. 
 
+> 💡 Nota: O projeto [`PesquisaElasticFacil`](https://github.com/luizanisio/PesquisaElasticFacil) combinado com [`Doc2VecFacil`](https://github.com/luizanisio/Doc2VecFacil) está bem adiantado e tem um grande diferencial, o uso de recursos nativos do ElasticSearch. Ele não implementa todas as possibilidades de combinaçãode operadores do BRS como este projeto, mas possui as principais combinações que são convertidas em queries nativas do ElasticSearch, incluindo a pesquisa vetorial. Vale a pena conferir.
+
+### O que está pronto
+O componente de análise de critérios de pesquisa em um determinado texto está pronto em [`PesquisaTextualBR`](https://github.com/luizanisio/PesquisaTextualBR), falta finalizar o serviço que vai combinar os recursos de pesquisa do MemSQL com os critérios de pesquisa avançados. O objetivo é parecido com o projeto [`PesquisaElasticFacil`](https://github.com/luizanisio/PesquisaElasticFacil), mas a ideia é permitir todos os operadores do BRS, incluindo operadores de campo e combinações mais complexas como `(termo1 ADJ5 termo2 PROX10 termo3) PROX5 termo4 COM (termo5 adj2 termo6)`, onde os operadores mudam de tipo e de distância.
+
 #### em breve...
 <p>Estarão disponíveis nesse repositório:</p>
 <ul>
-  <li>Scripts em python necessários para treinamento e vetorização dos documentos, o que permite ir além da busca textual, realizando uma busca semântica nos textos.</li>
   <li>Procedures e funções criadas para o <b>MemSQL</b>: responsáveis pelo pré-processamento dos textos para armazenamento no formato compatível com a pesquisa textual; funções responsáveis pela análise dos critérios de pesquisa; funções para identificação dos pesos dos termos (tfidf) em cada documento; e funções e procedures acessórias.
   <li>Scripts opcionais em python para inclusão de grandes volumes de dados na base</li>
 </ul>
@@ -82,4 +85,4 @@ Somando-se essa pesquisa textual ao poder de busca vetorial do MemSQL, podemos t
   <ul><li>Select * from base.vetores where DOT_PRODUCT(<b>meu_vetor</b>,vetores.vetor)>=<b>0.95</b></li></ul>
 
 
-####... em edição
+#### ... ⏳ projeto em andamento
